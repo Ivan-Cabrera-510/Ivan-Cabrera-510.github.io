@@ -1,0 +1,34 @@
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */
+body {
+  margin: 45px;
+  background-color: rgb(30, 30, 31);
+  font-family: Helvetica, Verdana;
+  font-size: 14px;
+}
+
+/* Applies to all <h1>...</h1> elements. */
+h1 {
+  font-family: Verdana;
+  font-size: 35px;
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+/* Applies to nav bar */
+nav {
+  font-family: Verdana;
+  font-size: 14px;
+  float: right;
+  background-color: rgb(22, 22, 22);
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius:45px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+}
+
+/* Applies to all elements with <... class="someclass"> specified. */
+.someclass { color: red; }
+
+/* Applies to the element with <... id="someid"> specified. */
+#someid { color: green; }
