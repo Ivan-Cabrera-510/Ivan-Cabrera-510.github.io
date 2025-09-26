@@ -2,7 +2,7 @@
 selectors). */
 body {
   margin: 45px;
-  background-color: rgb(30, 30, 31);
+  background-color: rgb(11, 19, 43);
   font-family: Helvetica, Verdana;
   font-size: 14px;
 }
@@ -13,6 +13,10 @@ h1 {
   font-size: 35px;
   font-weight: normal;
   margin-top: 15px;
+}
+
+h2 {
+  color:aliceblue;
 }
 
 /* Applies to nav bar */
@@ -27,8 +31,12 @@ nav {
   border-top-right-radius: 45px;
 }
 
+div {
+  border: 15px solid rgb(28, 37, 65);
+}
+
 /* Applies to all elements with <... class="someclass"> specified. */
-.someclass { color: red; }
+.someclass { color: rgb(22, 22, 22) }
 
 /* Applies to the element with <... id="someid"> specified. */
 #someid { color: green; }
