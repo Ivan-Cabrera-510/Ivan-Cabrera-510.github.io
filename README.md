@@ -1,2 +1,2 @@
 # Ivan-Cabrera.github.io
-"Create a portfolio site to showcase projects and skills with smooth navigation and a clean design. JavaScript adds interactivity and animations. Stretch goal: add a contact form and a downloadable resume option."
+A personal website built with HTML and CSS to showcase my projects, resume, and experience. Designed with a responsive layout and a modern sidebar navigation to highlight my work in programming, IT, and cybersecurity.
