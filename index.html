@@ -8,45 +8,167 @@
 </head>
 
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="profile">
-      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-      <h2>Ivan Cabrera</h2>
-      <p>Computer Science Student</p>
+
+  <div class="header">
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="Pic1.jpg" alt="Slide 1">
+      </div>
+      <div class="slide fade">
+        <img src="Pic2.jpg" alt="Slide 2">
+      </div>
+      <div class="slide fade">
+        <img src="Pic3.jpg" alt="Slide 3">
+      </div>
+  
+      <!-- Centered Overlay (applies to ALL slides) -->
+      <div class="centered">
+        <div class="name-text">Ivan Cabrera</div>
+        <div id="typed-text"></div>
+      </div>
     </div>
+  </div>
 
-    <div class="sidebar-info">
-      <p>Email: <a href="mailto:icabrera.mehs@gmail.com">icabrera.mehs@gmail.com</a></p>
-      <p>Place Holder</p>
-    </div>
+  <div class="page-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Ivan Cabrera</h2>
+        <p>Computer Science Student | Service Desk Technician at California State University East Bay</p>
+      </div>
 
-    <div class="sidebar-social">
-      <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
-      <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
-    </div>
-  </aside>
+      <div class="sidebar-info">
+        <p>Email: <a href="mailto:icabrera.mehs@gmail.com">icabrera.mehs@gmail.com</a></p>
+        <p>Let's Connect! Find Me Below: </p>
+      </div>
 
-  <!-- Main Content -->
-  <main class="content">
-    <!-- Nav Bar -->
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <div class="sidebar-social">
+        <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
+        <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
+      </div>
+    </aside>
 
-    <!-- About Section -->
-    <section id="Welcome">
-      <h1>Welcome!</h1>
-      <p>Hi, I’m Ivan Cabrera — Computer Science student and IT Service Desk Technician passionate about cybersecurity, systems, and software developments.</p>
-    </section>
+    <!-- Main Content -->
+    <main class="content">
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-      <!-- Footer -->
-   <footer>
-    <p> Place Holder </p>
-   </footer>
-  </main>
+      <section id="Welcome">
+        <h1>Welcome!</h1>
+        <p>Hi, I’m Ivan Cabrera — Computer Science student and IT Service Desk Technician passionate about cybersecurity, systems, and software development.</p>
+
+        <h1> About Me:</h1>
+        <p>I'm a Computer Science student at California State University, East Bay with hands-on experience in IT support and a strong interest in cybersecurity. I’m passionate about technology and always eager to learn new systems, tools, advances in tech, and best practices in IT and cybersecurity.</p>
+
+        <p>I currently work as a Service Desk Technician, where I provide Tier 1 and Tier 2 technical support, troubleshoot hardware/software issues, and assist with deployments, imaging, and account management using tools like ServiceNow, Jamf, SCCM, and identity systems.</p>
+      
+        <p>I'm eager to keep growing in IT and cybersecurity and always open to learning new skills, taking on challenges, and connecting with others in the field.</p>
+
+        <h1> Latest LinkedIn Post: </h1>
+        <div id ="linkedIn-post">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7379756007700226048?collapsed=1" height="683" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
+        </div>
+
+        <div id="github-projects">
+          <h2>Latest GitHub Repositories:</h2>
+          <div id="repo-list" class="repo-container"></div>
+        </div>
+        <p>Currently Working On: </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h4>"The so called impossible is merely something that has yet to happen"</h4>
+  </footer>
+
+  <!-- JS Code for Slide Show -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }    
+
+      slides[slideIndex - 1].style.display = "block";  
+
+      setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+    //Smooth Animation when scrolling
+    function reveal() {
+    document.querySelectorAll(".reveal").forEach((el) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) el.classList.add("active");
+    });
+  }
+  window.addEventListener("scroll", reveal);
+  reveal();
+
+  /* === GitHub API Integration === */
+  async function loadRepos() {
+    const username = "Ivan-Cabrera-510"; // <-- change this to your GitHub username
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
+
+    try {
+      const response = await fetch(apiUrl);
+      const repos = await response.json();
+
+      const repoList = document.getElementById("repo-list");
+      repoList.innerHTML = "";
+
+      repos.forEach(repo => {
+        const repoCard = document.createElement("div");
+        repoCard.classList.add("repo-card");
+        repoCard.innerHTML = `
+          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+          <p>${repo.description ? repo.description : "No description provided."}</p>
+          <span>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</span>
+        `;
+        repoList.appendChild(repoCard);
+      });
+    } catch (err) {
+      console.error("Error loading repos:", err);
+      document.getElementById("repo-list").innerHTML = "<p>Unable to load repositories.</p>";
+    }
+  }
+
+  loadRepos();
+
+  const text = ["IT Specialist.", "Computer Science Major.", "Tech Enthusiast.", "Problem Solver."];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+  current = text[i];
+  document.getElementById("typed-text").textContent = current.substring(0, j);
+
+  if (!isDeleting && j++ === current.length) {
+    isDeleting = true;
+    setTimeout(type, 1500);
+  } else if (isDeleting && j-- === 0) {
+    isDeleting = false;
+    i = (i + 1) % text.length;
+    setTimeout(type, 200);
+  } else {
+    setTimeout(type, isDeleting ? 60 : 100);
+  }
+}
+type()
+  </script>
+
 </body>
 </html>
