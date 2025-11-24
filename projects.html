@@ -46,6 +46,8 @@
       <div class="sidebar-social">
         <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
         <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
+        <a href="https://app.joinhandshake.com/profiles/7j4xnb$0">Handshake</a>
+        <a href="Ivan_Cabrera_Resume.pdf" download class="sidebar-btn"> Download Resume </a>
       </div>
     </aside>
 
@@ -56,25 +58,36 @@
         <a href="resume.html">Resume</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
       </nav>
 
-      <section id="Portfolio Website">
-        <h1>Portfolio Website</h1>
-        <p>A personal website built with HTML and CSS to showcase my projects, resume, and experience. Designed with a responsive layout and a modern sidebar navigation to highlight my work in programming, IT, and cybersecurity.</p>
-      </section>
-  
-      <section id="TrueNAS Media Server">
-        <h1>TrueNAS Media Server</h1>
-        <p>A self-hosted media server built on TrueNAS to manage and organize collections of movies, TV shows, music, and books. Integrated with services like Jellyfin for seamless media streaming and Kavita for digital library management.</p>
-      </section>
+      <h1>My Projects</h1>
+      <p>Here you can find some of my personal projects that completed or are working on.</p>
 
       <section>
         <div id="github-projects">
           <h3>Latest GitHub Repositories:</h3>
           <div id="repo-list" class="repo-container"></div>
         </div>
-        <p>Currently Working On: </p>
       </section>
+
+      <section id="Personal Portfolio Website">
+        <h1>Personal Portfolio Website - Personal Project </h1>
+        <p>A personal website built with HTML, CSS, and Java Script to showcase my projects, resume, and experience. Designed with a responsive layout and a modern sidebar navigation to highlight my work in programming, IT, and cybersecurity. Implemented a slideshow hero with typed text, project cards, and a GitHub API feed for latest repos; improved accessibility and performance and deployed via Github Pages.</p>
+      </section>
+
+      <section id="Duel-Dex – AI-Assisted Yu-Gi-Oh Deck Analyzer">
+        <h1>Duel-Dex – AI-Assisted Yu-Gi-Oh Deck Analyzer - Personal Project (WIP)</h1>
+        <p>Developed an AI-powered application that analyzes decks and recommends strategies based on matchups and card synergies. Designed database models for cards, decks, and hands to support real-time decision-making and future Android integration. This is a work in progress project.</p>
+      </section>
+  
+      <section id="TrueNAS Media Server">
+        <h1>TrueNAS Media Server - Personal Project</h1>
+        <p>A self-hosted media server built on TrueNAS to manage and organize collections of movies, TV shows, music, and books. Integrated with services like Jellyfin for seamless media streaming and Kavita for digital library management. Set up custom storage volumes, permissions, and automated backups for reliable streaming and library management. </p>
+      </section>
+
+      
+
     </main>
   </div>
 
@@ -83,85 +96,8 @@
     <h4>"The so called impossible is merely something that has yet to happen"</h4>
   </footer>
 
-  <!-- JS Code for Slide Show -->
-  <script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }    
-
-      slides[slideIndex - 1].style.display = "block";  
-
-      setTimeout(showSlides, 4000); // Change image every 4 seconds
-    }
-    //Smooth Animation when scrolling
-    function reveal() {
-    document.querySelectorAll(".reveal").forEach((el) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) el.classList.add("active");
-    });
-  }
-  window.addEventListener("scroll", reveal);
-  reveal();
-
-  /* === GitHub API Integration === */
-  async function loadRepos() {
-    const username = "Ivan-Cabrera-510"; // <-- change this to your GitHub username
-    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
-
-    try {
-      const response = await fetch(apiUrl);
-      const repos = await response.json();
-
-      const repoList = document.getElementById("repo-list");
-      repoList.innerHTML = "";
-
-      repos.forEach(repo => {
-        const repoCard = document.createElement("div");
-        repoCard.classList.add("repo-card");
-        repoCard.innerHTML = `
-          <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-          <p>${repo.description ? repo.description : "No description provided."}</p>
-          <span>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</span>
-        `;
-        repoList.appendChild(repoCard);
-      });
-    } catch (err) {
-      console.error("Error loading repos:", err);
-      document.getElementById("repo-list").innerHTML = "<p>Unable to load repositories.</p>";
-    }
-  }
-
-  loadRepos();
-
-  const text = ["IT Specialist.", "Computer Science Major.", "Tech Enthusiast.", "Problem Solver."];
-let i = 0, j = 0, current = "", isDeleting = false;
-
-function type() {
-  current = text[i];
-  document.getElementById("typed-text").textContent = current.substring(0, j);
-
-  if (!isDeleting && j++ === current.length) {
-    isDeleting = true;
-    setTimeout(type, 1500);
-  } else if (isDeleting && j-- === 0) {
-    isDeleting = false;
-    i = (i + 1) % text.length;
-    setTimeout(type, 200);
-  } else {
-    setTimeout(type, isDeleting ? 60 : 100);
-  }
-}
-type()
-  </script>
+  <!--Enables JS Code-->
+  <script src="scripts.js"></script>
 
 </body>
 </html>
