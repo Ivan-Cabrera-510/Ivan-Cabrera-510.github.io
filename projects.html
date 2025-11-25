@@ -1,103 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ivan Cabrera | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivan Cabrera | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="header">
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="Pic1.jpg" alt="Slide 1" />
+        </div>
+        <div class="slide fade">
+          <img src="Pic2.jpg" alt="Slide 2" />
+        </div>
+        <div class="slide fade">
+          <img src="Pic3.jpg" alt="Slide 3" />
+        </div>
 
-  <div class="header">
-    <div class="slideshow-container">
-      <div class="slide fade">
-        <img src="Pic1.jpg" alt="Slide 1">
-      </div>
-      <div class="slide fade">
-        <img src="Pic2.jpg" alt="Slide 2">
-      </div>
-      <div class="slide fade">
-        <img src="Pic3.jpg" alt="Slide 3">
-      </div>
-  
-      <!-- Centered Overlay (applies to ALL slides) -->
-      <div class="centered">
-        <div class="name-text">Ivan Cabrera</div>
-        <div id="typed-text"></div>
+        <!-- Centered Overlay (applies to ALL slides) -->
+        <div class="centered">
+          <div class="name-text">Ivan Cabrera</div>
+          <div id="typed-text"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="page-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h2>Ivan Cabrera</h2>
-        <p>Computer Science Student | Service Desk Technician at California State University East Bay</p>
-      </div>
-
-      <div class="sidebar-info">
-        <p>Email: <a href="mailto:icabrera.mehs@gmail.com">icabrera.mehs@gmail.com</a></p>
-        <p>Let's Connect! Find Me Below: </p>
-      </div>
-
-      <div class="sidebar-social">
-        <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
-        <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
-        <a href="https://app.joinhandshake.com/profiles/7j4xnb$0">Handshake</a>
-        <a href="Ivan_Cabrera_Resume.pdf" download class="sidebar-btn"> Download Resume </a>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="content">
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
-      </nav>
-
-      <h1>My Projects</h1>
-      <p>Here you can find some of my personal projects that completed or are working on.</p>
-
-      <section>
-        <div id="github-projects">
-          <h3>Latest GitHub Repositories:</h3>
-          <div id="repo-list" class="repo-container"></div>
+    <div class="page-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="profile">
+          <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+          <h2>Ivan Cabrera</h2>
+          <p>
+            Computer Science Student | Service Desk Technician at California
+            State University East Bay
+          </p>
         </div>
-      </section>
 
-      <section id="Personal Portfolio Website">
-        <h1>Personal Portfolio Website - Personal Project </h1>
-        <p>A personal website built with HTML, CSS, and Java Script to showcase my projects, resume, and experience. Designed with a responsive layout and a modern sidebar navigation to highlight my work in programming, IT, and cybersecurity. Implemented a slideshow hero with typed text, project cards, and a GitHub API feed for latest repos; improved accessibility and performance and deployed via Github Pages.</p>
-      </section>
+        <div class="sidebar-info">
+          <p>
+            Email:
+            <a href="mailto:icabrera.mehs@gmail.com">icabrera.mehs@gmail.com</a>
+          </p>
+          <p>Let's Connect! Find Me Below:</p>
+        </div>
 
-      <section id="Duel-Dex – AI-Assisted Yu-Gi-Oh Deck Analyzer">
-        <h1>Duel-Dex – AI-Assisted Yu-Gi-Oh Deck Analyzer - Personal Project (WIP)</h1>
-        <p>Developed an AI-powered application that analyzes decks and recommends strategies based on matchups and card synergies. Designed database models for cards, decks, and hands to support real-time decision-making and future Android integration. This is a work in progress project.</p>
-      </section>
-  
-      <section id="TrueNAS Media Server">
-        <h1>TrueNAS Media Server - Personal Project</h1>
-        <p>A self-hosted media server built on TrueNAS to manage and organize collections of movies, TV shows, music, and books. Integrated with services like Jellyfin for seamless media streaming and Kavita for digital library management. Set up custom storage volumes, permissions, and automated backups for reliable streaming and library management. </p>
-      </section>
+        <div class="sidebar-social">
+          <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
+          <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
+          <a href="https://app.joinhandshake.com/profiles/7j4xnb$0"
+            >Handshake</a
+          >
+          <a href="Ivan_Cabrera_Resume.pdf" download class="sidebar-btn">
+            Download Resume
+          </a>
+        </div>
+      </aside>
 
-      
+      <!-- Main Content -->
+      <main class="content">
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="resume.html">Resume</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+          <a href="blog.html">Blog</a>
+        </nav>
 
-    </main>
-  </div>
+        <h1>My Projects</h1>
+        <p>
+          Here you can find some of my personal projects that completed or are
+          working on.
+        </p>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <h4>"The so called impossible is merely something that has yet to happen"</h4>
-  </footer>
+        <section>
+          <div id="github-projects">
+            <h3>Latest GitHub Repositories:</h3>
+            <div id="repo-list" class="repo-container"></div>
+          </div>
+        </section>
 
-  <!--Enables JS Code-->
-  <script src="scripts.js"></script>
+        <section id="Personal Portfolio Website">
+          <h1>Personal Portfolio Website - Personal Project</h1>
+          <p>
+            A personal website built with HTML, CSS, and Java Script to showcase
+            my projects, resume, and experience. Designed with a responsive
+            layout and a modern sidebar navigation to highlight my work in
+            programming, IT, and cybersecurity. Implemented a slideshow hero
+            with typed text, project cards, and a GitHub API feed for latest
+            repos; improved accessibility and performance and deployed via
+            Github Pages.
+          </p>
+        </section>
 
-</body>
+        <section id="Duel-Dex – AI-Assisted Yu-Gi-Oh Deck Analyzer">
+          <h1>
+            Duel-Dex – AI-Assisted Yu-Gi-Oh Deck Analyzer - Personal Project
+            (WIP)
+          </h1>
+          <p>
+            Developed an AI-powered application that analyzes decks and
+            recommends strategies based on matchups and card synergies. Designed
+            database models for cards, decks, and hands to support real-time
+            decision-making and future Android integration. This is a work in
+            progress project.
+          </p>
+        </section>
+
+        <section id="TrueNAS Media Server">
+          <h1>TrueNAS Media Server - Personal Project</h1>
+          <p>
+            A self-hosted media server built on TrueNAS to manage and organize
+            collections of movies, TV shows, music, and books. Integrated with
+            services like Jellyfin for seamless media streaming and Kavita for
+            digital library management. Set up custom storage volumes,
+            permissions, and automated backups for reliable streaming and
+            library management.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h4>
+        "The so called impossible is merely something that has yet to happen"
+      </h4>
+    </footer>
+
+    <!--Enables JS Code-->
+    <script src="scripts.js"></script>
+  </body>
 </html>

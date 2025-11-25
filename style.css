@@ -26,7 +26,7 @@ body {
   color: white;
   font-size: 2.5rem;
   font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
 
@@ -35,7 +35,7 @@ body {
   margin-top: 10px;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #FFFF; 
+  color: #ffff;
 }
 
 /* Slideshow images stay behind text */
@@ -45,7 +45,6 @@ body {
   height: auto;
   overflow: hidden;
 }
-
 
 /* Sidebar */
 .sidebar {
@@ -119,19 +118,21 @@ body {
 }
 
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-  width: 100%; 
-  padding: 12px; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
-  margin-top: 6px; 
-  margin-bottom: 16px; 
-  resize: vertical 
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
+input[type="submit"] {
   background-color: #043eaa;
   color: white;
   padding: 12px 20px;
@@ -141,15 +142,15 @@ input[type=submit] {
 }
 
 /* When moving the mouse over the submit button */
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #454ea0;
 }
 
 /* Add a background color and some padding around the form */
 .contact form {
   border-radius: 5px;
-  font-family:Helvetica,Verdana,sans-serif;
-  background-color: #3A506B;
+  font-family: Helvetica, Verdana, sans-serif;
+  background-color: #3a506b;
   padding: 20px;
 }
 
@@ -206,8 +207,12 @@ section h1 {
 }
 
 @keyframes fade {
-  from {opacity: 0.4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Optional: Add dots for slide indicators */
@@ -260,7 +265,7 @@ section h1 {
   border-left: 4px solid var(--teal);
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
 }
 
@@ -281,9 +286,10 @@ section h1 {
 
 .repo-card span {
   font-size: 0.85rem;
-  col
+  color: #ccc;
+}
 
-  /* Create two unequal columns that floats next to each other */
+/* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
   float: left;

@@ -1,97 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ivan Cabrera | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivan Cabrera | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="header">
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="Pic1.jpg" alt="Slide 1" />
+        </div>
+        <div class="slide fade">
+          <img src="Pic2.jpg" alt="Slide 2" />
+        </div>
+        <div class="slide fade">
+          <img src="Pic3.jpg" alt="Slide 3" />
+        </div>
 
-  <div class="header">
-    <div class="slideshow-container">
-      <div class="slide fade">
-        <img src="Pic1.jpg" alt="Slide 1">
-      </div>
-      <div class="slide fade">
-        <img src="Pic2.jpg" alt="Slide 2">
-      </div>
-      <div class="slide fade">
-        <img src="Pic3.jpg" alt="Slide 3">
-      </div>
-  
-      <!-- Centered Overlay (applies to ALL slides) -->
-      <div class="centered">
-        <div class="name-text">Ivan Cabrera</div>
-        <div id="typed-text"></div>
+        <!-- Centered Overlay (applies to ALL slides) -->
+        <div class="centered">
+          <div class="name-text">Ivan Cabrera</div>
+          <div id="typed-text"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="page-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h2>Ivan Cabrera</h2>
-        <p>Computer Science Student | Service Desk Technician at California State University East Bay</p>
-      </div>
-
-      <div class="sidebar-info">
-        <p>Email: <a href="mailto:icabrera.mehs@gmail.com">icabrera.mehs@gmail.com</a></p>
-        <p>Let's Connect! Find Me Below: </p>
-      </div>
-
-      <div class="sidebar-social">
-        <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
-        <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
-        <a href="https://app.joinhandshake.com/profiles/7j4xnb$0">Handshake</a>
-        <a href="Ivan_Cabrera_Resume.pdf" download class="sidebar-btn"> Download Resume </a>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="content">
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
-      </nav>
-
-      <h1>Welcome!</h1>
-      <p>Hi, I’m Ivan Cabrera — Computer Science student and IT Service Desk Technician passionate about cybersecurity, systems, and software development.</p>
-
-      <section id="Welcome">
-
-        <h1> About Me:</h1>
-        <p>I'm a Computer Science student at California State University, East Bay with hands-on experience in IT support and a strong interest in cybersecurity. I’m passionate about technology and always eager to learn new systems, tools, advances in tech, and best practices in IT and cybersecurity.</p>
-
-        <p>I currently work as a Service Desk Technician, where I provide Tier 1 and Tier 2 technical support, troubleshoot hardware/software issues, and assist with deployments, imaging, and account management using tools like ServiceNow, Jamf, SCCM, and identity systems.</p>
-      
-        <p>I'm eager to keep growing in IT and cybersecurity and always open to learning new skills, taking on challenges, and connecting with others in the field.</p>
-
-        <h1> Latest LinkedIn Post: </h1>
-        <div id ="linkedIn-post">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7379756007700226048?collapsed=1" height="683" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    <div class="page-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="profile">
+          <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+          <h2>Ivan Cabrera</h2>
+          <p>
+            Computer Science Student | Service Desk Technician at California
+            State University East Bay
+          </p>
         </div>
-        <!-- Displays latest GitHub Projects based on recent Activity-->
-        <div id="github-projects">
-          <h2>Latest GitHub Repositories:</h2>
-          <div id="repo-list" class="repo-container"></div>
+
+        <div class="sidebar-info">
+          <p>
+            Email:
+            <a href="mailto:icabrera.mehs@gmail.com">icabrera.mehs@gmail.com</a>
+          </p>
+          <p>Let's Connect! Find Me Below:</p>
         </div>
-      </section>
 
-    </main>
-  </div>
+        <div class="sidebar-social">
+          <a href="http://linkedin.com/in/ivancabrera-">LinkedIn</a>
+          <a href="https://github.com/Ivan-Cabrera-510">GitHub</a>
+          <a href="https://app.joinhandshake.com/profiles/7j4xnb$0"
+            >Handshake</a
+          >
+          <a href="Ivan_Cabrera_Resume.pdf" download class="sidebar-btn">
+            Download Resume
+          </a>
+        </div>
+      </aside>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <h4>"The so called impossible is merely something that has yet to happen"</h4>
-  </footer>
-  <!--Enables JS Code-->
-  <script src="scripts.js"></script>
-</body>
+      <!-- Main Content -->
+      <main class="content">
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="resume.html">Resume</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+
+        <h1>Welcome!</h1>
+        <p>
+          Hi, I’m Ivan Cabrera — Computer Science student and IT Service Desk
+          Technician passionate about cybersecurity, systems, and software
+          development.
+        </p>
+
+        <section id="Welcome">
+          <h1>About Me:</h1>
+          <p>
+            I'm a Computer Science student at California State University, East
+            Bay with hands-on experience in IT support and a strong interest in
+            cybersecurity. I’m passionate about technology and always eager to
+            learn new systems, tools, advances in tech, and best practices in IT
+            and cybersecurity.
+          </p>
+
+          <p>
+            I currently work as a Service Desk Technician, where I provide Tier
+            1 and Tier 2 technical support, troubleshoot hardware/software
+            issues, and assist with deployments, imaging, and account management
+            using tools like ServiceNow, Jamf, SCCM, and identity systems.
+          </p>
+
+          <p>
+            I'm eager to keep growing in IT and cybersecurity and always open to
+            learning new skills, taking on challenges, and connecting with
+            others in the field.
+          </p>
+
+          <h1>Latest LinkedIn Post:</h1>
+          <div id="linkedIn-post">
+            <iframe
+              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7379756007700226048?collapsed=1"
+              height="683"
+              width="504"
+              frameborder="0"
+              allowfullscreen=""
+              title="Embedded post"
+            ></iframe>
+          </div>
+          <!-- Displays latest GitHub Projects based on recent Activity-->
+          <div id="github-projects">
+            <h2>Latest GitHub Repositories:</h2>
+            <div id="repo-list" class="repo-container"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h4>
+        "The so called impossible is merely something that has yet to happen"
+      </h4>
+    </footer>
+    <!--Enables JS Code-->
+    <script src="scripts.js"></script>
+  </body>
 </html>

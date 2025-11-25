@@ -1,68 +1,79 @@
 //Prevents errors if JS runs before HTML is loaded.
-document.addEventListener("DOMContentLoaded", () => {
-    
-});
+document.addEventListener("DOMContentLoaded", () => {});
 //Slide show for header
 let slideIndex = 0;
-    showSlides();
+showSlides();
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }    
-
-      slides[slideIndex - 1].style.display = "block";  
-
-      setTimeout(showSlides, 4000); // Change image every 4 seconds
-    }
-    //Smooth Animation when scrolling
-    function reveal() {
-    document.querySelectorAll(".reveal").forEach((el) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) el.classList.add("active");
-    });
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  window.addEventListener("scroll", reveal);
-  reveal();
 
-  //GitHub API Integration
-  async function loadRepos() {
-    const username = "Ivan-Cabrera-510";
-    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
 
-    try {
-      const response = await fetch(apiUrl);
-      const repos = await response.json();
+  slides[slideIndex - 1].style.display = "block";
 
-      const repoList = document.getElementById("repo-list");
-      repoList.innerHTML = "";
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+//Smooth Animation when scrolling
+function reveal() {
+  document.querySelectorAll(".reveal").forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) el.classList.add("active");
+  });
+}
+window.addEventListener("scroll", reveal);
+reveal();
 
-      repos.forEach(repo => {
-        const repoCard = document.createElement("div");
-        repoCard.classList.add("repo-card");
-        repoCard.innerHTML = `
+//GitHub API Integration
+async function loadRepos() {
+  const username = "Ivan-Cabrera-510";
+  const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const repos = await response.json();
+
+    const repoList = document.getElementById("repo-list");
+    repoList.innerHTML = "";
+
+    repos.forEach((repo) => {
+      const repoCard = document.createElement("div");
+      repoCard.classList.add("repo-card");
+      repoCard.innerHTML = `
           <h4><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-          <p>${repo.description ? repo.description : "No description provided."}</p>
+          <p>${
+            repo.description ? repo.description : "No description provided."
+          }</p>
           <span>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</span>
         `;
-        repoList.appendChild(repoCard);
-      });
-    } catch (err) {
-      console.error("Error loading repos:", err);
-      document.getElementById("repo-list").innerHTML = "<p>Unable to load repositories.</p>";
-    }
+      repoList.appendChild(repoCard);
+    });
+  } catch (err) {
+    console.error("Error loading repos:", err);
+    document.getElementById("repo-list").innerHTML =
+      "<p>Unable to load repositories.</p>";
   }
+}
 
-  loadRepos();
+loadRepos();
 
-  //Typed Text for header
-  const text = ["IT Specialist.", "Computer Science Major.", "Tech Enthusiast.", "Problem Solver."];
-let i = 0, j = 0, current = "", isDeleting = false;
+//Typed Text for header
+const text = [
+  "IT Specialist.",
+  "Computer Science Major.",
+  "Tech Enthusiast.",
+  "Problem Solver.",
+];
+let i = 0,
+  j = 0,
+  current = "",
+  isDeleting = false;
 
 function type() {
   current = text[i];
@@ -79,4 +90,4 @@ function type() {
     setTimeout(type, isDeleting ? 60 : 100);
   }
 }
-type()
+type();
