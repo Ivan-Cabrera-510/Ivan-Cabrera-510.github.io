@@ -63,6 +63,7 @@ body {
   border-radius: 50%;
   border: 5px solid #3a506b;
   margin-bottom: 15px;
+  
 }
 
 .sidebar h2 {
@@ -130,6 +131,13 @@ textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 
 /* Style the submit button with a specific background color etc */
 input[type="submit"] {
@@ -289,37 +297,60 @@ section h1 {
   color: #ccc;
 }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {
-  float: left;
-  width: 75%;
+
+/* Blog Layout */
+.row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
 }
 
-/* Right column */
+/* Left column: blog posts */
+.leftcolumn {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right column: sidebar */
 .rightcolumn {
-  float: left;
-  width: 25%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Blog cards */
+.card {
+  background-color: #1c2541; /* dark blue box */
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Blog-specific styling */
+.blog-post h2 {
+  margin-top: 0;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: #cfd9ff;
+  margin-bottom: 10px;
+}
+
+.blog-list ul,
+.card ul {
+  list-style-type: disc;
   padding-left: 20px;
 }
 
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+.blog-list li,
+.card li {
+  margin-bottom: 6px;
 }
 
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}

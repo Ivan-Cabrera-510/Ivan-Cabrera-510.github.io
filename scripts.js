@@ -1,5 +1,6 @@
 //Prevents errors if JS runs before HTML is loaded.
 document.addEventListener("DOMContentLoaded", () => {});
+
 //Slide show for header
 let slideIndex = 0;
 showSlides();
