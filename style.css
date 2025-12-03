@@ -326,3 +326,61 @@ section h1 {
   margin-bottom: 6px;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  /* Stack sidebar above main content */
+  .page-container {
+    flex-direction: column;
+  }
+
+  /* Make sidebar full width */
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 5px solid #3a506b;
+  }
+
+  /* Center the sidebar content more */
+  .sidebar-social a {
+    margin: 8px auto;
+    width: 80%;
+  }
+
+  /* Main content padded less on small screens */
+  .content {
+    padding: 20px;
+  }
+
+  /* Navbar becomes stacked / centered */
+  .navbar {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Slideshow text shrinks */
+  .centered {
+    font-size: 1.8rem;
+  }
+
+  #typed-text {
+    font-size: 1rem;
+  }
+
+  /* BLOG: stack columns -->
+     leftcolumn (posts) and rightcolumn (sidebar) */
+  .row {
+    flex-direction: column;
+  }
+
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+  }
+
+  /* Blog cards spacing */
+  .card {
+    margin-top: 15px;
+  }
+}
